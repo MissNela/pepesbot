@@ -10,7 +10,6 @@ import os
 import time
 from discord.voice_client import VoiceClient
 from discord import Game, Embed, Color, Status, ChannelType
-import youtube_dl
 
 
 
@@ -19,4 +18,15 @@ import youtube_dl
 
 
 
-bot=commands.Bot(command_prefix='?')
+
+bot=commands.Bot(command_prefix='P!')
+
+@client.event
+async def on_ready():
+  print("The bot is ready and connected to Discord!")
+  
+@client.event
+async def Ping():
+  await client.send_message("Pong!")
+  
+@client.run(os.getenv("BOT_TOKEN"))
