@@ -26,7 +26,10 @@ async def on_ready():
   print("The bot is ready and connected to Discord!")
   
 @client.event
-async def Ping():
-  await client.send_message("Pong!")
+async def on_message(message):
+    await client.process_commands(message)
+    if message.content.startswith('Ping'):
+        await client.send_message(message.channel, ':ping_pong: Pong!')
+
   
 @client.run(os.getenv("BOT_TOKEN"))
