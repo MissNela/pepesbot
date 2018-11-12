@@ -35,4 +35,4 @@ async def on_message(message):
 
 
 @client.run(os.getenv("BOT_TOKEN"))
-@client.run(os.getenv("BOT_TOKEN"))
+@client.run(o
